@@ -209,5 +209,53 @@ namespace TestTriengleSolver
             Assert.AreEqual(expectedResponse, executionResponse);
         }
 
+        [Test]
+        public void InvalidResponse_Input3and2and5_OutputInvalidTriangleDetected()
+        {
+            // Test Data Preparation
+            int firstSide = 3;
+            int secondSide = 2;
+            int thirdSide = 5;
+            string expectedResponse = INVALID_TRIANGLE;
+
+            // Test execution
+            string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
+
+            // Assert
+            Assert.AreEqual(expectedResponse, executionResponse);
+        }
+
+        [Test]
+        public void InvalidResponse_Input2and5and3_OutputInvalidTriangleDetected()
+        {
+            // Test Data Preparation
+            int firstSide = 2;
+            int secondSide = 5;
+            int thirdSide = 3;
+            string expectedResponse = INVALID_TRIANGLE;
+
+            // Test execution
+            string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
+
+            // Assert
+            Assert.AreEqual(expectedResponse, executionResponse);
+        }
+
+        [Test]
+        public void InvalidResponse_Input2and3and5_OutputInvalidTriangleDetected()
+        {
+            // Test Data Preparation
+            int firstSide = 2;
+            int secondSide = 3;
+            int thirdSide = 5;
+            string expectedResponse = INVALID_TRIANGLE;
+
+            // Test execution
+            string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
+
+            // Assert
+            Assert.AreEqual(expectedResponse, executionResponse);
+        }
+
     }
 }
