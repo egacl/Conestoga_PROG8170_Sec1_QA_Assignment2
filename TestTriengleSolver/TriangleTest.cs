@@ -12,6 +12,10 @@ namespace TestTriengleSolver
 
         private static string VALID_SCALENE_RESPONSE = "A SCALENE triangle is formed";
 
+        private static string INVALID_ZERO_SIDE_RESPONSE = "Invalid Triangle - at least one side is zero";
+
+        private static string INVALID_TRIANGLE = "INVALID Triangle detected!!";
+
 
         [Test]
         public void ValidEquilateral_Input60and60and60_OutputValidTriangle()
@@ -149,6 +153,54 @@ namespace TestTriengleSolver
             int secondSide = 3;
             int thirdSide = 5;
             string expectedResponse = VALID_SCALENE_RESPONSE;
+
+            // Test execution
+            string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
+
+            // Assert
+            Assert.AreEqual(expectedResponse, executionResponse);
+        }
+
+        [Test]
+        public void ZeroLengthOneSide_Input0and3and5_OutputInvalidTriangle()
+        {
+            // Test Data Preparation
+            int firstSide = 0;
+            int secondSide = 3;
+            int thirdSide = 5;
+            string expectedResponse = INVALID_ZERO_SIDE_RESPONSE;
+
+            // Test execution
+            string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
+
+            // Assert
+            Assert.AreEqual(expectedResponse, executionResponse);
+        }
+
+        [Test]
+        public void ZeroLengthOneSide_Input4and0and5_OutputInvalidTriangle()
+        {
+            // Test Data Preparation
+            int firstSide = 4;
+            int secondSide = 0;
+            int thirdSide = 5;
+            string expectedResponse = INVALID_ZERO_SIDE_RESPONSE;
+
+            // Test execution
+            string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
+
+            // Assert
+            Assert.AreEqual(expectedResponse, executionResponse);
+        }
+
+        [Test]
+        public void ZeroLengthOneSide_Input4and3and0_OutputInvalidTriangle()
+        {
+            // Test Data Preparation
+            int firstSide = 4;
+            int secondSide = 3;
+            int thirdSide = 0;
+            string expectedResponse = INVALID_ZERO_SIDE_RESPONSE;
 
             // Test execution
             string executionResponse = Triangle.AnalyzeTriangle(firstSide, secondSide, thirdSide);
